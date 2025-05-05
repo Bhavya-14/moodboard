@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up / Log In - Moodboard.ai</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .auth-container {
+            display: flex;
+            min-height: calc(100vh - 200px);
+            align-items: center;
+            justify-content: center;
+            padding: 40px 0;
+        }
+
+        .auth-section {
+            display: flex;
+            width: 100%;
+            max-width: 900px;
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .auth-form-section {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .auth-decorative-section {
+            flex: 1;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .auth-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .auth-form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .auth-input {
+            width: 100%;
+            padding: 12px;
+            background: var(--bg-color);
+            border: 1px solid var(--primary-color);
+            border-radius: 8px;
+            color: var(--text-color);
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .auth-input:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+        }
+
+        .auth-btn {
+            background: var(--primary-color);
+            color: #FFFFFF;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .auth-btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-4px);
+        }
+
+        .social-login {
+            display: flex;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .social-btn {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 10px;
+            border: 1px solid var(--primary-color);
+            border-radius: 8px;
+            background: var(--bg-color);
+            color: var(--text-color);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: border-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-btn:hover {
+            border-color: var(--secondary-color);
+            transform: translateY(-4px);
+        }
+
+        .auth-toggle {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 14px;
+            margin-top: 16px;
+            display: inline-block;
+            transition: color 0.3s ease;
+        }
+
+        .auth-toggle:hover {
+            color: var(--secondary-color);
+        }
+
+        .decorative-text {
+            font-size: 36px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .decorative-subtext {
+            font-size: 16px;
+            color: #FFFFFF;
+            opacity: 0.8;
+            text-align: center;
+            max-width: 300px;
+        }
+
+        .decorative-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .circle-large {
+            width: 150px;
+            height: 150px;
+            top: -50px;
+            right: -50px;
+        }
+
+        .circle-small {
+            width: 80px;
+            height: 80px;
+            bottom: -20px;
+            left: -20px;
+        }
+
+        @media (max-width: 768px) {
+            .auth-section {
+                flex-direction: column;
+            }
+
+            .auth-form-section {
+                padding: 24px;
+            }
+
+            .auth-decorative-section {
+                padding: 24px;
+                min-height: 200px;
+            }
+
+            .auth-title {
+                font-size: 28px;
+            }
+
+            .decorative-text {
+                font-size: 24px;
+            }
+
+            .social-login {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Decorative elements -->
+        <div class="decorator decorator-circle circle-1"></div>
+        <div class="decorator decorator-circle circle-2"></div>
+        <div class="decorator grid-dots dots-1"></div>
+        <div class="decorator grid-dots dots-2"></div>
+
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="40" viewBox="0 0 60 40">
+                    <circle cx="30" cy="20" r="12.5" fill="none" stroke="#FF69B4" stroke-width="8"/>
+                </svg>
+                <div class="logo-text">Moodboard.ai</div>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="create.html">Create</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+            <div class="actions">
+                <button class="theme-toggle" id="themeToggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="theme-icon moon-icon">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Mobile Navigation -->
+        <div class="mobile-nav" id="mobileNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="create.html">Create</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+
+        <!-- Auth Section -->
+        <div class="auth-container">
+            <div class="auth-section">
+                <div class="auth-form-section">
+                    <h1 class="auth-title" id="formTitle">Sign Up</h1>
+                    <form id="authForm" class="auth-form">
+                        <div id="nameField">
+                            <input type="text" name="name" class="auth-input" placeholder="Full Name" required>
+                        </div>
+                        <input type="email" name="email" class="auth-input" placeholder="Email" required>
+                        <input type="password" name="password" class="auth-input" placeholder="Password" required>
+                        <button type="submit" class="auth-btn" id="submitBtn">Sign Up</button>
+                        <div class="social-login">
+                            <button type="button" class="social-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                </svg>
+                                Login with GitHub
+                            </button>
+                            <button type="button" class="social-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 48 48">
+                                    <path fill="#FFFFFF" d="M44.5 20H24v8.5h11.8C34.3 33.6 29.6 37 24 37c-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.2 4.5 29.4 2 24 2 12.3 2 3 11.3 3 23s9.3 21 21 21c10.7 0 21-7.7 21-21 0-1.2-.1-2.1-.3-3z"/>
+                                  </svg>
+                                Login with Google
+                            </button>
+                        </div>
+                        <a href="#" class="auth-toggle" id="authToggle">Already have an account? Log In</a>
+                    </form>
+                </div>
+                <div class="auth-decorative-section">
+                    <div class="decorative-circle circle-large"></div>
+                    <div class="decorative-circle circle-small"></div>
+                    <div class="decorative-text">Join the Creative Community</div>
+                    <p class="decorative-subtext">Unlock the power of AI to create stunning moodboards and bring your ideas to life.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="40" viewBox="0 0 60 40">
+                            <circle cx="30" cy="20" r="12.5" fill="none" stroke="#FF69B4" stroke-width="8"/>
+                        </svg>
+                        <div class="logo-text">Moodboard.ai</div>
+                    </div>
+                    <p class="footer-tagline">AI-powered design inspiration</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <ul>
+                            <li><a href="create.html">Create</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="#">Blog</a></li> 
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">Community</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Moodboard.ai. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/main.js"></script>
+    </body>
+    </html>

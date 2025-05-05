@@ -1,0 +1,326 @@
+/* Create Page Styles */
+.input-section {
+    padding: 80px 0;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.input-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.input-subtitle {
+    font-size: 18px;
+    opacity: 0.8;
+    margin-bottom: 48px;
+}
+
+
+.prompt-input {
+    width: 100%;
+    height: 60px;
+    padding: 16px;
+    background: var(--card-bg);
+    border: none; /* Removed border for a cleaner look */
+    border-radius: 35px; /* Increased border radius for a more rounded look */
+    color: var(--text-color);
+    font-size: 16px;
+    resize: none;
+    transition: box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Added box shadow for 3D effect */
+}
+
+.prompt-input:focus {
+    outline: none;
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(29, 14, 64, 0.4); /* Enhanced shadow on focus */
+}
+
+/* Adjust placeholder label to fit the new design */
+.prompt-placeholder {
+    color: #6B46C1;
+    position: absolute;
+    top: 15px;
+    left: 16px;
+    color: var(--text-color);
+    opacity: 0.5;
+    font-size: 16px;
+    pointer-events: none;
+    transition: transform 0.3s ease, font-size 0.3s ease, opacity 0.3s ease;
+}
+
+.prompt-input:focus + .prompt-placeholder,
+.prompt-input:not(:placeholder-shown) + .prompt-placeholder {
+    transform: translateY(-40px) translateX(-10px); /* Adjusted position for larger radius */
+    font-size: 14px;
+    opacity: 1;
+    background: var(--bg-color);
+    padding: 0 8px;
+}
+
+.options-container {
+    margin-bottom: 48px;
+}
+
+.options-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+}
+
+.option-group label {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.option-select {
+    width: 100%;
+    padding: 12px;
+    background: var(--card-bg);
+    border: 1px solid var(--primary-color);
+    border-radius: 30px;
+    color: var(--text-color);
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.option-select:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+}
+
+.generate-btn {
+    background: var(--primary-color);
+    color: #FFFFFF;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.generate-btn:hover {
+    background: var(--secondary-color);
+    transform: translateY(-4px);
+}
+
+.examples {
+    margin-top: 48px;
+}
+
+.examples-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.example-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+}
+
+.example-chip {
+    background: var(--card-bg);
+    padding: 12px 24px;
+    border-radius: 24px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.example-chip:hover {
+    background: var(--primary-color);
+    transform: scale(1.05);
+}
+
+.moodboard-section {
+    padding: 80px 0;
+}
+
+.moodboard-title {
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.board-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-bottom: 32px;
+    justify-content: center;
+}
+
+.board-title-input {
+    background: var(--card-bg);
+    border: 1px solid var(--primary-color);
+    padding: 12px;
+    border-radius: 8px;
+    color: var(--text-color);
+    font-size: 18px;
+    font-weight: 600;
+    width: 300px;
+}
+
+.board-prompt-display {
+    font-size: 16px;
+    opacity: 0.8;
+}
+
+.color-palette {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-bottom: 32px;
+}
+
+.color-swatch {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--card-bg);
+    transition: transform 0.3s ease;
+}
+
+.color-swatch:hover {
+    transform: scale(1.2);
+}
+
+.board-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    margin-bottom: 48px;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.primary-btn {
+    background: var(--primary-color);
+    color: #FFFFFF;
+    border: none;
+}
+
+.primary-btn:hover {
+    background: var(--secondary-color);
+    transform: translateY(-4px);
+}
+
+.secondary-btn {
+    background: var(--card-bg);
+    border: 1px solid var(--primary-color);
+    color: var(--text-color);
+}
+
+.secondary-btn:hover {
+    border-color: var(--secondary-color);
+    transform: translateY(-4px);
+}
+
+.board-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+}
+
+.board-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.board-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.item-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.board-item:hover .item-overlay {
+    opacity: 1;
+}
+
+.item-action {
+    background: var(--primary-color);
+    border: none;
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.item-action:hover {
+    background: var(--secondary-color);
+}
+
+.item-action svg {
+    stroke: #FFFFFF;
+}
+
+.export-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 48px;
+}
+
+@media (max-width: 768px) {
+    .input-title {
+        font-size: 28px;
+    }
+    .options-grid {
+        grid-template-columns: 1fr;
+    }
+    .board-info {
+        flex-direction: column;
+        align-items: center;
+    }
+    .board-title-input {
+        width: 100%;
+    }
+}
