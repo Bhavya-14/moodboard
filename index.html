@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/home.css">
 </head>
+
 <body>
     <div class="container">
         <!-- Decorative elements -->
@@ -19,21 +21,25 @@
         <header>
             <div class="logo">
                 <svg xmlns="http://www.w3.org/2000/svg" width="60" height="40" viewBox="0 0 60 40">
-                    <circle cx="30" cy="20" r="12.5" fill="none" stroke="#FF69B4" stroke-width="8"/>
+                    <circle cx="30" cy="20" r="12.5" fill="none" stroke="#FF69B4" stroke-width="8" />
                 </svg>
                 <div class="logo-text">Moodboard.ai</div>
             </div>
             <nav class="main-nav">
                 <ul>
                     <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="create.html">Create</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
             <div class="actions">
                 <button class="theme-toggle" id="themeToggle">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="theme-icon moon-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="theme-icon moon-icon">
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
                 </button>
@@ -49,72 +55,181 @@
         <div class="mobile-nav" id="mobileNav">
             <ul>
                 <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="create.html">Create</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="login.html">Sign In</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
 
         <!-- Hero Section -->
         <section class="hero">
             <div class="hero-content">
-                <h1 class="hero-title fade-in">Design Inspiration, <br>Powered by AI</h1>
-                <p class="hero-subtitle fade-in delay-1">Create stunning moodboards in seconds with the power of artificial intelligence. Transform your ideas into visual inspiration.</p>
+                <h1 class="hero-title fade-in">AI That Gets Your Aesthetics. </h1>
+                <p class="hero-subtitle fade-in delay-1">Create stunning moodboards in seconds with the power of
+                    artificial intelligence. Transform your ideas into visual inspiration.</p>
                 <div class="hero-cta fade-in delay-2">
                     <a href="login.html" class="cta-button">Log In</a>
                     <a href="login.html" class="secondary-button">Sign Up</a>
                 </div>
             </div>
             <div class="hero-image fade-in delay-3">
-                <img src="/assets/moodboard-example.png" alt="Moodboard.ai example" class="hero-img">               
+                <img src="/assets/moodboard-example.png" alt="Moodboard.ai example" class="hero-img">
                 <div class="image-overlay"></div>
             </div>
         </section>
 
-        <!-- Features Section -->
-        <section class="features">
-            <h2 class="section-title">How It Works</h2>
-            <div class="feature-grid">
-                <div class="feature-card fade-in">
-                    <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 20h9"></path>
-                            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
-                        </svg>
+        <!-- About Section-->
+        <section id="about" class="about-section fade-in delay-1">
+            <div class="container about-grid">
+                <div class="about-left">
+                    <div class="masonry-container">
+                        <div class="masonry-box box1"></div>
+                        <div class="masonry-box box2"></div>
+                        <div class="masonry-box box3"></div>
+                        <div class="masonry-box box4"></div>
+                        <div class="masonry-box box5"></div>
+                        <div class="masonry-box box6"></div>
                     </div>
-                    <h3 class="feature-title">Describe Your Vision</h3>
-                    <p class="feature-description">Simply describe your creative direction with a few words or phrases. Our AI understands design concepts and aesthetics.</p>
+                    <p class="about-subtext">
+                        "Born from the collective frustration of creative brains sick of the old-school workflow."
+                    </p>
                 </div>
+                <div class="about-right">
+                    <h2 class="about-title">Built for the Creators Who Hate Wasting Time.</h2>
+                    <p class="about-description">
+                        Tired of moodboarding the old way—scrolling through Pinterest, screenshotting random stuff,
+                        dumping it in Figma, rearranging it until your brain fried?
+                    </p>
+                    <p class="about-description">
+                        <strong>Use moodboard.ai</strong>: an AI-powered tool that actually understands what you're
+                        going for.
+                    </p>
+                    <ul class="about-features">
+                        <li style="--delay: 0s">Type your vibe.</li>
+                        <li style="--delay: 0.15s">Get a full visual board in seconds.</li>
+                        <li style="--delay: 0.3s">Drag it. Replace it. Export it.</li>
+                    </ul>
 
-                <div class="feature-card fade-in delay-1">
-                    <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
-                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
-                        </svg>
-                    </div>
-                    <h3 class="feature-title">AI Generation</h3>
-                    <p class="feature-description">Our advanced AI analyzes your input and curates high-quality images and complementary color palettes that match your concept.</p>
-                </div>
-
-                <div class="feature-card fade-in delay-2">
-                    <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
-                        </svg>
-                    </div>
-                    <h3 class="feature-title">Export & Use</h3>
-                    <p class="feature-description">Download your moodboard, export directly to design tools, or share with your team to align on creative direction.</p>
                 </div>
             </div>
         </section>
 
+        <!-- Features Section -->
+        <section class="features" id="features">
+            <h2 class="section-title">Bringing Your MoodBoard To Life</h2>
+            <h2 class="section-sub-title">in 4 simple steps</h2>
+            <div class="feature-grid">
+
+                <!-- Step 1: Set The Vibe -->
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 20h9"></path>
+                            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Set The Vibe</h3>
+                    <p class="feature-description">Type in a short description of your desired mood or theme.</p>
+                </div>
+
+                <!-- Step 2: Watch Magic Happen -->
+                <div class="feature-card fade-in delay-1">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Watch Magic Happen</h3>
+                    <p class="feature-description">AI instantly curates a set of images that match your vision.</p>
+                </div>
+
+                <!-- Step 3: Make It Yours -->
+                <div class="feature-card fade-in delay-2">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="5 9 2 12 5 15"></polyline>
+                            <polyline points="19 9 22 12 19 15"></polyline>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Make It Yours</h3>
+                    <p class="feature-description">Drag, resize, replace images, or add more to perfect your board.</p>
+                </div>
+
+                <!-- Step 4: Share Your Creation -->
+                <div class="feature-card fade-in delay-3">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="18" cy="5" r="3"></circle>
+                            <circle cx="6" cy="12" r="3"></circle>
+                            <circle cx="18" cy="19" r="3"></circle>
+                            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Share Your Creation</h3>
+                    <p class="feature-description">Download your moodboard or save it to your dashboard.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!--Pricing Section-->
+        <section class="pricing" id="pricing">
+            <h2 class="section-title pricing-title">Choose Your Plan</h2>
+            <div class="pricing-grid">
+
+                <!-- Free Plan -->
+                <div class="pricing-card free-plan">
+                    <h3 class="plan-title">Free Plan</h3>
+                    <ul class="plan-details">
+                        <li>1 Project, 1 Moodboard</li>
+                        <li>AI-Generated Moodboard</li>
+                        <li>No AI Image Editing After Creation</li>
+                        <li>Export as PDF</li>
+                        <li>10 Images per Moodboard</li>
+                    </ul>
+                    <button class="plan-btn">Start Free</button>
+                </div>
+
+                <!-- Pro Plan (Middle Plan - darker background and slightly larger) -->
+                <div class="pricing-card pro-plan">
+                    <h3 class="plan-title">Pro Plan</h3>
+                    <ul class="plan-details ">
+                        <li>Unlimited Projects & Moodboards</li>
+                        <li>Limited AI Image Editing</li>
+                        <li>Refine and Edit Moodboards</li>
+                        <li>Export as PDF</li>
+                        <li>20 Images per Moodboard</li>
+                    </ul>
+                    <button class="plan-btn">Get Pro</button>
+                </div>
+
+                <!-- Premium Plan -->
+                <div class="pricing-card premium-plan">
+                    <h3 class="plan-title">Premium Plan</h3>
+                    <ul class="plan-details">
+                        <li>Unlimited Projects & Moodboards</li>
+                        <li>Unlimited AI Image Editing</li>
+                        <li>Advanced Image Customization</li>
+                        <li>Export as PDF</li>
+                        <li>Unlimited Images per Moodboard</li>
+                        <li>Priority Support</li>
+                    </ul>
+                    <button class="plan-btn">Get Premium</button>
+                </div>
+
+            </div>
+        </section>
+
         <!-- Example Section -->
-        <section class="examples-section">
+        <section class="examples-section" id="gallery">
             <h2 class="section-title">Endless Possibilities</h2>
             <div class="examples-wrapper">
                 <div class="examples-grid">
@@ -150,8 +265,70 @@
         <section class="cta-section">
             <div class="cta-content fade-in">
                 <h2 class="cta-title">Ready to Transform Your Design Process?</h2>
-                <p class="cta-description">Join thousands of designers using AI to streamline their workflow and unlock new creative possibilities.</p>
+                <p class="cta-description">Join thousands of designers using AI to streamline their workflow and unlock
+                    new creative possibilities.</p>
                 <a href="create.html" class="cta-button">Create Your First Moodboard &#x21E8;</a>
+            </div>
+        </section>
+
+        <!--FAQs-->
+        <section class="faq-section" id="faq">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">Can I edit the moodboard after it's generated? </button>
+                    <div class="faq-answer">
+                        <p>Yes, if you're on a <strong>Pro</strong> or <strong>Premium</strong> plan. The Free Plan does
+                            not include post-generation editing. Pro allows limited tweaks, while Premium offers full
+                            customization capabilities.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Can I export the moodboard after creating it?</button>
+                    <div class="faq-answer">
+                        <p>Absolutely. All plans let you <strong>export your moodboard as a PDF</strong>. It’s perfect
+                            for sharing, presenting, or storing your visual ideas.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">What is a moodboard?</button>
+                    <div class="faq-answer">
+                        <p>A moodboard is a curated collection of <strong>images, colors, and design elements</strong>
+                            that visually represent a specific theme, feeling, or concept. It’s a powerful tool for
+                            planning creative projects.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">What makes this moodboard generator different?</button>
+                    <div class="faq-answer">
+                        <p>Our tool uses <strong>AI to understand your vibe</strong> and generate a complete board in
+                            seconds. Plus, you get advanced editing, drag-and-drop simplicity, and export features
+                            tailored to creatives.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Contact-->
+        <section class="contact-us" id="contact">
+            <div class="contact-container">
+                <h2>Contact Us</h2>
+                <p>We'd love to hear from you. Please fill out the form below to get in touch.</p>
+                <form action="#" method="POST" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="Your Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Your Message"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
             </div>
         </section>
 
@@ -161,7 +338,7 @@
                 <div class="footer-brand">
                     <div class="logo">
                         <svg xmlns="http://www.w3.org/2000/svg" width="60" height="40" viewBox="0 0 60 40">
-                            <circle cx="30" cy="20" r="12.5" fill="none" stroke="#FF69B4" stroke-width="8"/>
+                            <circle cx="30" cy="20" r="12.5" fill="none" stroke="#FF69B4" stroke-width="8" />
                         </svg>
                         <div class="logo-text">Moodboard.ai</div>
                     </div>
@@ -179,7 +356,7 @@
                         <h4>Company</h4>
                         <ul>
                             <li><a href="about.html">About</a></li>
-                            <li><a href="#">Blog</a></li> 
+                            <li><a href="#">Blog</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
@@ -195,20 +372,26 @@
                 <p>© 2025 Moodboard.ai. All rights reserved.</p>
                 <div class="social-links">
                     <a href="#" class="social-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+                            </path>
                         </svg>
                     </a>
                     <a href="#" class="social-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                             <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                             <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                         </svg>
                     </a>
                     <a href="#" class="social-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                            </path>
                             <rect x="2" y="9" width="4" height="12"></rect>
                             <circle cx="4" cy="4" r="2"></circle>
                         </svg>
@@ -220,4 +403,5 @@
 
     <script src="js/main.js"></script>
 </body>
+
 </html>

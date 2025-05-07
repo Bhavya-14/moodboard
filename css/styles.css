@@ -5,6 +5,7 @@
     --text-color: #E2E8F0;
     --bg-color: #1A202C;
     --card-bg: #2D3748;
+    --card-bg-dark : #232832;
     --accent-color: #F6AD55;
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -15,6 +16,7 @@
     --text-color: #2D3748;
     --bg-color: #F7FAFC;
     --card-bg: #FFFFFF;
+    --card-bg-dark : #e8e8e8;
     --accent-color: #ED8936;
 }
 
@@ -24,6 +26,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+  }
+  
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg-color);
@@ -127,7 +133,9 @@ header {
     transition: color 0.3s ease;
 }
 
-.main-nav a:hover,
+.main-nav a:hover{
+    color: #f6cf9f;
+}
 .main-nav a.active {
     color: var(--accent-color);
 }
@@ -208,6 +216,16 @@ header {
 .mobile-nav a.active {
     color: var(--accent-color);
 }
+
+
+  /* Animation keyframes */
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
 
 /* Animations */
 .fade-in {
@@ -325,3 +343,23 @@ footer {
         transform: rotate(-45deg) translate(7px, -7px);
     }
 }
+
+::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: #2D3748;
+    border-radius: 8px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(to right, #6B46C1, #4299E1);
+    border-radius: 8px;
+    border: 2px solid transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to right, #4299E1, #6B46C1);
+  }
+  
