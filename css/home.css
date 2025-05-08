@@ -1,5 +1,7 @@
 /* Homepage Styles */
-
+body {
+    overflow-x: hidden;
+}
 .hero {
     display: flex;
     align-items: center;
