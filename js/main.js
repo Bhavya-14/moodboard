@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         body.classList.add('light-theme');
         themeIcon.innerHTML = '<path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>';
         if (heroImage) {
-            heroImage.src = '/assets/moodboard-example-light.png';
+            heroImage.src = 'moodboard-example-light.png';
         }
     }
     console.log(themeIcon)
@@ -27,8 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (heroImage) {
             console.log(heroImage.src)
             heroImage.src = isLightTheme 
-                ? '/assets/moodboard-example-light.png' 
-                : '/assets/moodboard-example.png';
+                ? 'moodboard-example-light.png' 
+                : 'moodboard-example.png';
             console.log(heroImage.src)
 
         }
