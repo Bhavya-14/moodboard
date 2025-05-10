@@ -8,15 +8,22 @@ window.addEventListener('load', () => {
     const container = document.querySelector('.img-container');
     container.classList.add('img-container-positioned');
 
-    // 1. Position images in masonry layout
+    // Calculate total width of all columns including gaps
+    const totalLayoutWidth = columnCount * columnWidth + (columnCount - 1) * gap;
+
+    // Calculate horizontal offset to center the layout in the container
+    const containerWidth = container.offsetWidth;
+    const xOffset = (containerWidth - totalLayoutWidth) / 2;
+
+    // Position images in masonry layout
     images.forEach((img) => {
         img.classList.add('masonry-img');
         img.setAttribute('data-x', 0);
         img.setAttribute('data-y', 0);
 
         const minColumnIndex = columns.indexOf(Math.min(...columns));
-        const x = minColumnIndex * (columnWidth + gap) + 500;
-        const y = columns[minColumnIndex] + 50;
+        const x = xOffset + minColumnIndex * (columnWidth + gap);
+        const y = columns[minColumnIndex] + 30;
 
         img.style.left = `${x}px`;
         img.style.top = `${y}px`;
@@ -24,16 +31,10 @@ window.addEventListener('load', () => {
         columns[minColumnIndex] += img.offsetHeight + gap;
     });
 
-    let isDraggingOrResizing = false;
-    let clickTimeout;
-
     // 2. Enable drag and resize using Interact.js
     interact('.img-container img')
         .draggable({
             listeners: {
-                start(event) {
-                    isDraggingOrResizing = true;
-                },
                 move(event) {
                     const target = event.target;
                     const x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx;
@@ -42,9 +43,6 @@ window.addEventListener('load', () => {
                     target.style.transform = `translate(${x}px, ${y}px)`;
                     target.setAttribute('data-x', x);
                     target.setAttribute('data-y', y);
-                },
-                end(event) {
-                    isDraggingOrResizing = false;
                 }
             }
         })
@@ -76,7 +74,6 @@ window.addEventListener('load', () => {
 
     const popupGallery = document.createElement('div');
     popupGallery.className = 'popup-gallery';
-    popup.appendChild(popupGallery);
 
     const btnContainer = document.createElement('div');
     btnContainer.className = 'popup-buttons';
@@ -100,25 +97,45 @@ window.addEventListener('load', () => {
     btnContainer.appendChild(replaceBtn);
     btnContainer.appendChild(addBtn);
     popup.appendChild(btnContainer);
+    popup.appendChild(popupGallery);
 
-    // 4. On image click – open popup with delay (only if not dragging/resizing)
+    // 4. On image click – open popup
     images.forEach((img) => {
         img.addEventListener('click', () => {
-            if (!isDraggingOrResizing) {
-                clearTimeout(clickTimeout); // Clear previous timeout if any
-                clickTimeout = setTimeout(() => {
-                    selectedMainImage = img;
-                    popup.style.display = 'block';
-                    selectedPopupImageSrc = null;
-                    replaceBtn.disabled = true;
-                    addBtn.disabled = true;
-                }, 150); // Short delay before opening the popup
+            if (img.classList.contains('border-active')) {
+                img.classList.remove('border-active');
+                if (deleteBtn) {
+                    deleteBtn.style.display = 'none'; // Hide the button when the image is deselected
+                }
+
+            }
+            else {
+                images.forEach((img) => {
+                    img.classList.remove('border-active');
+
+                })
+                img.classList.add('border-active');
+
+
             }
         });
+        img.addEventListener('dblclick', () => {
+            selectedMainImage = img;
+            popup.style.display = 'block'; // or 'block', depending on your CSS
+            deleteBtn.style.display = 'inline-block';
+            replaceBtn.disabled = true;
+            addBtn.disabled = true;
+            popupGallery.querySelectorAll('img').forEach(pImg => {
+                pImg.classList.remove('selected');
+            });
+
+            selectedPopupImageSrc = null;
+        })
     });
 
+
     // 5. Load images into popup
-    const sources = ['a1.png', 'a2.png', 'a3.png', 'a4.png', 'a5.png', 'a6.png'];
+    const sources = ['a11.png', 'a12.png', 'a13.png', 'a14.png', 'a15.png', 'a16.png'];
     popupGallery.innerHTML = '';
     sources.forEach(src => {
         const pImg = document.createElement('img');
@@ -173,6 +190,38 @@ window.addEventListener('load', () => {
 
             container.appendChild(newImg);
 
+            newImg.addEventListener('click', () => {
+                if (newImg.classList.contains('border-active')) {
+                    newImg.classList.remove('border-active');
+                    if (deleteBtn) {
+                        deleteBtn.style.display = 'none'; // Hide the button when the image is deselected
+                    }
+
+                }
+                else {
+                    images.forEach((newImg) => {
+                        newImg.classList.remove('border-active');
+
+                    })
+                    newImg.classList.add('border-active');
+
+
+                }
+            });
+
+            newImg.addEventListener('dblclick', () => {
+                selectedMainImage = newImg;
+                popup.style.display = 'block'; // or 'block', depending on your CSS
+                deleteBtn.style.display = 'inline-block';
+                replaceBtn.disabled = true;
+                addBtn.disabled = true;
+                popupGallery.querySelectorAll('img').forEach(pImg => {
+                    pImg.classList.remove('selected');
+                });
+
+                selectedPopupImageSrc = null;
+            })
+
             interact(newImg)
                 .draggable({
                     listeners: {
@@ -208,4 +257,37 @@ window.addEventListener('load', () => {
             popup.style.display = 'none';
         }
     });
+});
+
+// Color boxes logic (unchanged)
+const colorList = ['#C14464', '#957650', '#F4E1C1', '#C89098'];
+const colorBoxes = document.querySelectorAll('.color-box');
+const colorCodes = document.querySelectorAll('.color-code');
+
+colorBoxes.forEach((colorBox, index) => {
+    const hex = colorList[index];
+    colorBox.style.backgroundColor = hex;
+    colorCodes[index].textContent = hex;
+});
+
+// Google fonts logic (unchanged)
+const fontList = ['Poppins', 'Playfair Display'];
+
+function loadGoogleFonts(fonts) {
+    const formattedFonts = fonts.map(font => font.replace(/ /g, '+')).join('&family=');
+    const link = document.createElement('link');
+    link.href = `https://fonts.googleapis.com/css2?family=${formattedFonts}&display=swap`;
+    link.rel = 'stylesheet';
+    document.head.appendChild(link);
+}
+
+loadGoogleFonts(fontList);
+
+const fontTextEls = document.querySelectorAll('.font p:first-child');
+const fontNameEls = document.querySelectorAll('.fontName');
+
+fontTextEls.forEach((el, index) => {
+    const font = fontList[index];
+    el.style.fontFamily = `'${font}', sans-serif`;
+    fontNameEls[index].textContent = font;
 });

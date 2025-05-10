@@ -1,46 +1,80 @@
-header{
+header {
     background-color: var(--card-bg);
     height: 10vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    padding: 0 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.logo{
+.logo {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     width: 33%;
+    gap: 0.5rem;
 }
 
-.title{
+.logo-text {
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--text-color);
+}
+
+.title {
     text-align: center;
-    font-size: 2.5rem;
-    font-weight: bolder;
+    font-size: 2rem;
+    font-weight: 800;
     color: var(--text-color);
     width: 33%;
 }
 
-.icons{
+.icons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 33%;
+    gap: 20px;
+}
+
+/* NEW: icon buttons */
+.icon-btn {
+    color: white;
+    padding: 0.6rem 0.75rem;
+    border-radius: 12px;
+    transition: all 0.2s ease;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 33%;
-    gap: 30px;
+    cursor: pointer;
+    margin-right: 20px;
+    width: 90px;
+    border: 4px solid var(--card-bg-dark);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+
 }
 
-.save, .share{
-    cursor: pointer;
+.icon-btn:hover {
+    transform: translateY(2px);
+    box-shadow: 0 10px 12px rgba(0, 0, 0, 0.25);
+}
+
+.icon-btn svg {
+    width: 35px;
+    height: 35px;
 }
 
 main{
     background-color: var(--bg-color);
+    display: flex;
 }
 
 .img-container {
     position: relative;
-    width: 100vw;
+    width: 75vw;
     height: 90vh;
     overflow: hidden;
 }
@@ -50,6 +84,18 @@ main{
     position: absolute;
     object-fit: cover;
 }
+.img-container-positioned {
+    position: relative;
+}
+
+.masonry-img {
+    position: absolute;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    pointer-events: auto !important;
+
+}
+
 .img-wrapper {
     position: absolute;
     border: 2px solid transparent;
@@ -78,17 +124,19 @@ main{
 }
 
 .popup {
+    border: 3px solid rgb(151, 151, 151);
     position: fixed;
-    left: 0;
-    top: 5vh;
-    width: 33vw;
-    height: 90vh;
+    left: 10;
+    top: 10vh;
+    width: 23vw;
+    height: 70vh;
     background: var(--card-bg-dark);
     overflow-y: auto;
-    border-right: 2px solid #ccc;
     padding: 10px;
     z-index: 1000;
     display: none;
+    box-shadow: 35px 35px 15px rgba(0, 0, 0, 0.5); 
+
 }
 
 .popup-gallery {
@@ -100,7 +148,7 @@ main{
     width: 100%;
     margin-bottom: 10px;
     cursor: pointer;
-    border: 2px solid transparent;
+    border: 5px solid transparent;
     transition: border-color 0.2s ease;
 }
 
@@ -110,19 +158,166 @@ main{
 
 .popup-buttons {
     margin-top: 20px;
+    margin-bottom: 20px;
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 12px;
+    justify-content: center;
 }
 
-.popup-buttons button{
-    width: 40%;
+.popup-buttons button {
+    flex: 1 1 150px; 
+    max-width: 200px;
+    padding: 10px 16px;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 8px;
     background-color: var(--primary-color);
     color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-.popup-buttons button {
-    padding: 8px;
+
+.popup-buttons button:hover {
+    background-color: var(--primary-color-hover, #444);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.popup-buttons button:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+
+.other-container {
+    width: 24vw;
+    height: 88vh;
+    background: var(--card-bg);
+    border-radius: 32px;
+    padding: 20px;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease-in-out;
+}
+
+/* ===== Colors Section ===== */
+.colors {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    padding: 10px;
+}
+
+.color {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.color-box {
+    width: 125px;
+    height: 125px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.color-box:hover {
+    transform: scale(1.05);
     cursor: pointer;
 }
+
+.color-code {
+    font-size: 0.85rem;
+    color: var(--text-color);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-family: monospace;
+}
+
+/* ===== Fonts Section ===== */
+.fonts {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.font {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.font p:first-child {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.fontName {
+    margin-top: 6px;
+    font-size: 0.95rem;
+    color: #aaa;
+    font-style: italic;
+}
+
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 10;
+    border-radius: 8px;
+}
+
+.image-overlay button {
+    margin: 5px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.image-overlay button.delete-btn {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.image-overlay button.edit-btn {
+    background-color: #3498db;
+    color: white;
+}
+
+.border-active{
+    border: 5px solid #6B46C1;
+}
+
+
+.delete-btn {
+    display: none; /* Initially hidden */
+    z-index: 10; /* Ensure it's on top */
+}
+
+
