@@ -119,5 +119,5 @@ document.querySelectorAll('.faq-question').forEach(button => {
       document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
       if (!wasActive) item.classList.add('active');
     });
-  });
+});
   
