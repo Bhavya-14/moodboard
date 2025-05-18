@@ -8,6 +8,7 @@
     --card-bg-dark : #232832;
     --accent-color: #F6AD55;
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --primary-color-dark: #2d1f4e;
 }
 
 .light-theme {
@@ -18,6 +19,7 @@
     --card-bg: #FFFFFF;
     --card-bg-dark : #e8e8e8;
     --accent-color: #ED8936;
+    --primary-color-dark: #47356e;;
 }
 
 * {
