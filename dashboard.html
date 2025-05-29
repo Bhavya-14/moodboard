@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+  <div class="dash-header">
+        <div class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="40" viewBox="0 0 60 40">
+                <circle cx="30" cy="20" r="12.5" fill="none" stroke="#FF69B4" stroke-width="8" />
+            </svg>
+            <div class="logo-text">Moodboard.ai</div>
+        </div>
+
+        <div class="title">
+            My Moodboards
+        </div>
+
+      </div>
+  <main class="dashboard-main">
+      <div class="projects-grid">
+        <div class="add-card">
+          <a href="create.html" class="add-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <path d="M12 2v20m10-10H2" stroke="#fff" stroke-width="2" fill="none" />
+            </svg>
+            <h1>Add MoodBoard</h1>
+          </a>
+        </div>
+        <!-- Project Card Example -->
+        <div class="project-card">
+          <img src="assets/protoType_images/a10.png" alt="Moodboard Preview" class="project-image" />
+          <div class="project-title">Bakery</div>
+          <div class="project-actions">
+            <a href="prototype.html" class="edit-btn">
+              Edit
+            </a>
+            <button class="delete-btn" title="Delete">
+              Delete
+            </button>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="assets/protoType_images/a14.png" alt="Moodboard Preview" class="project-image" />
+          <div class="project-title">
+            Anime
+          </div>
+          <div class="project-actions">
+            <a href="prototype.html" class="edit-btn">
+              Edit
+            </a>
+            <button class="delete-btn" title="Delete">
+              Delete
+            </button>
+          </div>
+        </div>
+
+        <!-- Add more project cards here -->
+
+      </div>
+
+      <script src="js/dash.js"></script>
+    </main>
+</body>
+
+</html>
