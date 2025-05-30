@@ -1,0 +1,138 @@
+.dash-header {
+    background-color: var(--card-bg);
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 40%;
+    gap: 0.5rem;
+}
+
+.logo-text {
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--text-color);
+}
+
+.title {
+    text-align: left;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text-color);
+    width: 60%;
+}
+
+.dashboard-main {
+    padding: 2rem;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.add-card {
+    background-color: var(--card-bg-dark);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 350px;
+    position: relative;
+    transition: transform 0.2s ease-in-out;
+}
+
+.add-card svg {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.add-card h1{
+    text-align: center;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-weight: 600;
+}
+.project-card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 350px;
+    position: relative;
+    transition: transform 0.2s ease-in-out;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+}
+
+.project-image {
+    width: 100%;
+    height: 75%;
+    object-fit: cover;
+    display: block;
+}
+
+.project-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 0;
+    background-color: var(--light-gray);
+    gap: 20px;
+}
+
+.project-title {
+    text-align: center;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.edit-btn,
+.delete-btn {
+    background: var(--card-bg-dark);
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    padding: 4px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: var(--primary-color);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    text-decoration: none;
+}
+
+.delete-btn {
+    padding-top: 7.2px;
+    padding-bottom: 7.2px;
+}
+
+.edit-btn:hover,
+.delete-btn:hover {
+    transform: scale(1.2);
+}
